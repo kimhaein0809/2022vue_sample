@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1><a href="#">logo</a></h1>
+    <h1><a href="#">company</a></h1>
     <div class="nav">
         <ul>
             <li v-for="item in menu" :key="item">{{item}}</li>
