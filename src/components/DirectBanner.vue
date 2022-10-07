@@ -1,0 +1,43 @@
+<template>
+  <div class="container">
+    <ul class="d_icon">
+        <li v-for="item in directs" v-bind:key="item">
+        
+            <a href="item.href">
+                <img v-bind:src="`./images/directs/${item.src}`" alt="">
+                <div class="txt">
+                    {{item.name}}
+                </div>
+            </a>
+        </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+
+export default {
+    props:["data"],
+    data(){
+        return {
+        }
+    }
+}
+</script>
+
+<style lang="scss">
+    .d_icon{
+        display: flex;
+        gap: 20px;
+        li{
+            _width: 10%;
+        }
+        img{
+            width: 100%;
+        }
+        .txt{
+            text-align: center;
+        }
+    }
+
+</style>

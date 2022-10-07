@@ -1,9 +1,9 @@
 <template>
   <div class="visual">
     <Swiper>
-      <SwiperSlide>test1</SwiperSlide>
-      <SwiperSlide>test2</SwiperSlide>
-      <SwiperSlide>test3</SwiperSlide>
+      <SwiperSlide class="item">test1</SwiperSlide>
+      <SwiperSlide class="item">test2</SwiperSlide>
+      <SwiperSlide class="item">test3</SwiperSlide>
     </Swiper>
   </div>
 </template>
@@ -23,6 +23,13 @@ export default {
     .visual{
         height: 300px;
         background: pink;
+        margin-bottom: 20px;
+        .item{
+          height: 300px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         
     }
 </style>
