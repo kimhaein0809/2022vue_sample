@@ -1,7 +1,9 @@
 <template>
   <HeaderView></HeaderView>
   <MainVisual></MainVisual>
-  <DirectBanner v-bind:data = "directData"></DirectBanner>
+  <DirectBanner 
+    :data = "directData">
+  </DirectBanner>
 </template>
 
 <script>
