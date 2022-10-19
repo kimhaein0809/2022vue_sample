@@ -1,13 +1,8 @@
 <template>
   <div class="visual">
     <swiper
-    :navigation="true"
     :modules="modules"
     v-bind="swiperOptions"
-    :loop="true"
-    :pagination="{
-        clickable: true,
-      }"
     class="mySwiper"
     >
       <swiper-slide
@@ -20,7 +15,6 @@
           <img :src="`./images/swiper/${item.src}`" alt="">
         </div>
       </swiper-slide>
-    
     </swiper>
     <div class="btnWrap">
       <div class="prev">이전</div>
@@ -56,6 +50,8 @@ export default {
       swiperView:sData,
       swiperOptions:{
         loop:true,
+        observer: true,
+        observeParents: true,
         navigation:{
           nextEl:'.visual .next',
           prevEl:'.visual .prev',
@@ -63,13 +59,16 @@ export default {
         pagination:{
           type:'fraction'
         }
+        
       }
     };
   },
 };
 </script>
 <style lang="scss">
-  .mySwiper{
+  
+  .visual{
+    .mySwiper{
     .swiper-slide{
       height: 400px;
       .innerItem{ 
@@ -81,20 +80,19 @@ export default {
       }
     }
   }
-  .visual{
     position: relative;
     .btnWrap{
-      gap:10px;
-      display: flex;
       position: absolute;
+      display: flex;
       bottom: 20px;
       z-index: 10;
-      left: calc( 50% + 300px );
-      .next,.prev{
+      gap:10px;
+      left: calc( 50% + 500px );
+      .next,.prev{ 
         padding: 5px 10px;
         background: rgba(0,0,0,0.3);
-        border-radius: 10px;
-        color: white;
+        border-radius:10px;
+        color:white;
         cursor: pointer;
       }
     }
